@@ -1,0 +1,169 @@
+@import "Imports/normalize.scss";
+@import "Imports/fonts.scss";
+@import "Imports/variables.scss";
+
+
+// ===Common===
+body{
+    background: $color-bg;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.section-outer{
+    padding: {
+        left: 20px;
+        right: 20px;
+    }
+}
+.section-inner{
+    width: 90%;
+    margin: 0 auto;
+    @media (max-width: $screen-md-max){
+        width: 100%;
+    }
+
+    @media (min-width: $screen-lg-min){
+        width: 80%;
+    }
+}
+// ===/Common===
+
+// ===Header===
+.section-header{
+    position: relative;
+    height: 100vh;
+
+
+    &-top-bar{
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 12%;
+    }
+
+    &-logo{
+        @include fontOpenSansSemiBold;
+        font-size: $fontSize-header-logo;
+        @media (max-width: $screen-md-max){
+            display: none;
+        }
+    }
+
+
+
+    &-nav-and-search{
+        position: relative;
+        display: flex;
+        align-items: baseline;
+        @media (max-width: $screen-md-max){
+            width: 100%;
+        }
+
+        &__nav{
+            width: 100%;
+            display: flex;
+            list-style: none;
+            @include fontOpenSansSemiBold;
+            justify-content: space-around;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            &--li{
+                position: relative;
+                font-size: $fontSize-header-nav;
+
+                @media (max-width: $screen-md-max){
+                    margin: {
+                        right: 10px;
+                        left: 10px;
+                    }
+                }
+
+                @media (min-width: $screen-lg-min){
+                    margin: {
+                        right: 20px;
+                        left: 20px;
+                    }
+                }
+            }
+        }
+
+        &__search{
+            margin: {
+                right: 10px;
+                left: 10px;
+            }
+            width: 22px; height: 22px;
+        }
+    }
+
+    &-content{
+        flex-grow: 1;
+        position: relative;
+        background: url('../Images/header-pic.png') no-repeat 50% 50%;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%; min-height: 88%;
+
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;right: 0;left: 0;bottom: 0;
+            background: black;
+            opacity: 0.8;
+            z-index: 5;
+        }
+    }
+
+    &-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        &__title{
+            @include fontOpenSansSemiBold;
+            color: $color-header-text;
+            font-size: $fontSize-header-title;
+            line-height: 55px;
+            text-align: center;
+
+        }
+
+        &__subtitle{
+            margin-top: 20px;
+            color: $color-header-text;
+            font-size: $fontSize-header-subtitle;
+            @include fontOpenSans;
+            text-align: center;
+        }
+
+        &-form{
+            display: flex;
+            margin-top: 80px;
+            &__btn-services{
+                background: none;
+                @include buttonHeader;
+                border: 3px solid white;
+            }
+
+            &__btn-hire{
+                margin-left: 25px;
+                border: none;
+                @include buttonHeader;
+                background: $color-header-button;
+
+            }
+        }
+
+
+    }
+}
+// ===Header===

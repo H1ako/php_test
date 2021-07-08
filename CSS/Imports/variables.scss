@@ -1,0 +1,54 @@
+// ===Common===
+$color-bg: white;
+
+@mixin fontOpenSans{
+    font-family: 'Open Sans', sans-serif;
+}
+
+@mixin fontRobotoBold{
+    font-family: 'Roboto', sans-serif;
+}
+
+@mixin fontOpenSansSemiBold{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+
+// ==Adaptive Sizes==
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;
+
+$screen-sx-max: 575px;
+$screen-sm-max: 767px;
+$screen-md-max: 991px;
+$screen-lg-max: 1199;
+// ==/Adaptive Sizes==
+// ===/Common===
+
+// ===Header===
+// ==Color==
+$color-header-text: white;
+$color-header-button: #00897b;
+// ==/Color==
+
+// ==Font==
+$fontSize-header-title: 60px;
+$fontSize-header-subtitle: 22px;
+$fontSize-header-nav: 20px;
+$fontSize-header-logo: 25px;
+// ==/Font==
+
+// ==Button==
+@mixin buttonHeader{
+    width: 220px;
+    height: 70px;
+    outline: none;
+    text-decoration: none;
+    font-size: 20px;
+    color: $color-header-text;
+    @include fontRobotoBold;
+}
+// ==/Button==
+// ===/Header===
