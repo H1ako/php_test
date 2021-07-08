@@ -1,6 +1,8 @@
 // ===Common===
 $color-bg: white;
-
+$color-text: black;
+$fontSize-block-title: 30px;  //Open Sans Bold
+$fontSize-block-subtitle: 15px;  //Open Sans
 @mixin fontOpenSans{
     font-family: 'Open Sans', sans-serif;
 }
@@ -12,6 +14,20 @@ $color-bg: white;
 @mixin fontOpenSansSemiBold{
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
+}
+
+@mixin blockTitle{
+    text-align: center;
+    @include fontOpenSansSemiBold;
+    font-size: $fontSize-block-title;
+}
+
+@mixin blockSubtitle{
+    margin-top: 40px;
+    text-align: center;
+    @include fontOpenSans;
+    font-size: $fontSize-block-subtitle;
+    width: 630px;
 }
 
 // ==Adaptive Sizes==
@@ -42,7 +58,7 @@ $fontSize-header-logo: 25px;
 
 // ==Button==
 @mixin buttonHeader{
-    width: 220px;
+    min-width: 220px;
     height: 70px;
     outline: none;
     text-decoration: none;
@@ -52,3 +68,31 @@ $fontSize-header-logo: 25px;
 }
 // ==/Button==
 // ===/Header===
+
+// ===About===
+$fontSize-about-feature-title: 20px; //Open Sans Bold
+$fontSize-about-feature-subtitle: 15px;  //Open Sans
+// ===/About===
+
+// ===Services===
+$color-services-bg: #e4fdf9;
+$color-services-service-bg: white;
+$color-services-service-bg-hover: #00897b;
+$color-services-service-title: black;
+$color-services-service-subtitle: black;
+$color-services-service-btn: black;
+
+$fontSize-services-feature-title: 20px; //Open Sans Bold
+$fontSize-services-feature-subtitle: 15px;  //Open Sans
+$fontSize-services-service-title: 20px; //Open Sans Bold
+$fontSize-services-service-subtitle: 15px;  //Open Sans
+$fontSize-services-service-btn: 20px;  //Open Sans Bold
+// ===/Services===
+
+// ===Works===
+$color-works-btn: white;
+$color-works-btn-bg: #00897b;
+$fontSize-works-btn: 20px;
+$fontSize-works-work-title: 20px;
+$fontSize-works-work-subtitle: 15px;
+// ===/Works===
