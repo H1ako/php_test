@@ -1,6 +1,8 @@
 // ===Common===
 $color-bg: white;
 $color-text: black;
+$color-button: #00897b;
+$fontSize-button: 20px;
 $fontSize-block-title: 30px;  //Open Sans Bold
 $fontSize-block-subtitle: 15px;  //Open Sans
 @mixin fontOpenSans{
@@ -30,6 +32,15 @@ $fontSize-block-subtitle: 15px;  //Open Sans
     width: 630px;
 }
 
+@mixin filledButtonEffect($color){
+    background: darken($color, 10%);
+}
+
+@mixin emptyButtonEffect{
+    background: $color-button;
+    color: white;
+}
+
 // ==Adaptive Sizes==
 $screen-sm-min: 576px;
 $screen-md-min: 768px;
@@ -46,7 +57,6 @@ $screen-lg-max: 1199;
 // ===Header===
 // ==Color==
 $color-header-text: white;
-$color-header-button: #00897b;
 // ==/Color==
 
 // ==Font==
@@ -86,13 +96,31 @@ $fontSize-services-feature-title: 20px; //Open Sans Bold
 $fontSize-services-feature-subtitle: 15px;  //Open Sans
 $fontSize-services-service-title: 20px; //Open Sans Bold
 $fontSize-services-service-subtitle: 15px;  //Open Sans
-$fontSize-services-service-btn: 20px;  //Open Sans Bold
 // ===/Services===
 
 // ===Works===
 $color-works-btn: white;
-$color-works-btn-bg: #00897b;
-$fontSize-works-btn: 20px;
 $fontSize-works-work-title: 20px;
 $fontSize-works-work-subtitle: 15px;
 // ===/Works===
+
+// ===Pricing Plan===
+$color-pricePlan-bg: #f0f1f1;
+$color-pricePlan-plan-header: #3949ab;
+$color-pricePlan-plan-main: white;
+$color-pricePlan-plan-feature-text: black;
+$fontSize-pricePlan-title: 25px;
+$fontSize-pricePlan-price: 50px;
+$fontSize-pricePlan-price-date-and-cur: 17px;
+$fontSize-pricePlan-feature-text: 17px;
+// ===/Pricing Plan===
+
+// ===Footer===
+$fontSize-footer-text: 20px;
+// ===/Footer===
+
+// ===Team===
+$color-team-soc_net-bg: #f0f1f1;
+$fontSize-team-member-name: 20px;
+$fontSize-team-member-occupation: 15px;
+// ===/Team===

@@ -154,14 +154,24 @@ body{
                 background: none;
                 @include buttonHeader;
                 border: 3px solid white;
+                transition: .2s;
+
+                &:hover{
+                    background: $color-header-text;
+                    color: $color-button;
+                }
             }
 
             &__btn-hire{
                 margin-left: 25px;
                 border: none;
                 @include buttonHeader;
-                background: $color-header-button;
+                background: $color-button;
+                transition: .2s;
 
+                &:hover{
+                    @include filledButtonEffect($color-button);
+                }
             }
         }
     }
@@ -276,7 +286,7 @@ body{
             display: flex;
             flex-direction: column;
             align-items: center;
-            transition: .3s;
+            transition: .2s;
 
             &:hover{
                 background: $color-services-service-bg-hover;
@@ -325,11 +335,11 @@ body{
                 min-height: 50px;
                 outline: none;
                 background: none;
-                border: 3px solid $color-services-service-btn;
+                border: 3px solid $color-button;
                 @include fontOpenSansSemiBold;
                 color: $color-services-service-btn;
-                font-size: $fontSize-services-service-btn;
-                transition: .3s;
+                font-size: $fontSize-button;
+                transition: .2s;
             }
         }
     }
@@ -358,6 +368,35 @@ body{
         }
         &__subtitle{
             @include blockSubtitle;
+        }
+    }
+
+    &-filter{
+        margin-top: 115px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        &__btn{
+            margin: {
+                left: 10px;
+                right: 10px;
+            };
+            @include fontOpenSansSemiBold;
+            font-size: $fontSize-button;
+            background: none;
+            outline: none;
+            border: 3px solid $color-button;
+            min-width: 180px;
+            height: 55px;
+            transition: .2s;
+            &:first-child{
+                min-width: 100px;
+            }
+
+            &:hover{
+                @include emptyButtonEffect;
+            }
         }
     }
 
@@ -446,14 +485,316 @@ body{
         justify-content: center;
         &-btn{
             @include fontRobotoBold;
-            font-size: $fontSize-works-btn;
+            font-size: $fontSize-button;
             min-width: 210px;
-            background: $color-works-btn-bg;
+            background: $color-button;
             outline: none;
             border: 0;
             height: 70px;
-            color: $color-works-btn;
+            color: white;
+            transition: .2s;
+
+            &:hover{
+                @include filledButtonEffect($color-button);
+            }
         }
     }
 }
 // ===/Works===
+
+// ===Footer===
+.section-footer{
+    position: relative;
+
+    .section-inner{
+        @include fontRobotoBold;
+        font-size: $fontSize-footer-text;
+        width: 100%;
+        height: 65px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+// ===/Footer===
+
+// ===Pricing Plan===
+.section-pricing_plan{
+    background: $color-pricePlan-bg;
+    position: relative;
+    color: $color-text;
+    .section-inner{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: {
+            top: 125px;
+            bottom: 125px;
+        }
+    }
+
+    &-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__title{
+            @include blockTitle;
+        }
+        &__subtitle{
+            @include blockSubtitle;
+        }
+    }
+
+    &-content{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        &-plans{
+            margin-top: 125px;
+            display: grid;
+            position: relative;
+            grid-gap: 30px;
+            grid-auto-rows: minmax(670px, auto);
+            grid-template-columns: 1fr 1fr 1fr;
+
+            &-plan{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+                overflow: hidden;
+                transition: .2s;
+                background: $color-pricePlan-plan-main;
+
+                &:hover{
+                    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+                }
+                &-header{
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    background: $color-pricePlan-plan-header;
+                    width: 100%;
+                    margin-top: -20px;
+                    min-height: 230px;
+                    transform: skewy(-5deg);
+                    @include fontOpenSans;
+                    &__title{
+                        transform: skewy(5deg);
+                        color: white;
+                        font-size: $fontSize-pricePlan-title;
+                    }
+                    &__price{
+                        margin-top: 40px;
+                        transform: skewy(5deg);
+                        color: white;
+                        text-align: center;
+                        .price-currency{
+                            margin-top: -10px;
+                            font-size: $fontSize-pricePlan-price-date-and-cur;
+                        }
+                        .price-num{
+                            font-size: $fontSize-pricePlan-price;
+                        }
+                        .price-date{
+                            font-size: $fontSize-pricePlan-price-date-and-cur;
+                        }
+                    }
+                }
+
+                &-features{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-top: 25px;
+                    position: relative;
+                    @include fontOpenSans;
+                    &-feature{
+                        position: relative;
+                        color: $color-pricePlan-plan-feature-text;
+                        font-size: $fontSize-pricePlan-feature-text;
+                        margin-top: 25px;
+                        padding-bottom: 15px;
+
+                        &::before, &::after{
+                            content: '';
+                            position: absolute; top: 100%;
+                            width: 90px;
+                            height: 1px;
+                            background: lightgray;
+                        }
+                        &::before{
+                            left: 50%;
+                        }
+                        &::after{
+                            right: 50%;
+                        }
+                    }
+                }
+
+                &__btn{
+                    margin-top: 70px;
+                    @include fontRobotoBold;
+                    font-size: $fontSize-button;
+                    min-width: 180px;
+                    background: none;
+                    outline: none;
+                    border: 3px solid black;
+                    height: 60px;
+                    color: black;
+                    transition: .2s;
+
+                    &:hover{
+                        @include emptyButtonEffect;
+                        border: none;
+                    }
+                }
+            }
+        }
+
+    }
+}
+// ===/Pricing Plan===
+
+// ===Team===
+.section-team{
+    position: relative;
+    .section-inner{
+        position: relative;
+        padding: {
+            top: 125px;
+            bottom: 125px;
+        };
+    }
+
+    &-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__title{
+            @include blockTitle;
+        }
+        &__subtitle{
+            @include blockSubtitle;
+        }
+    }
+
+    &-content{
+        margin-top: 125px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &-member{
+            width: 30%;
+            height: 100%;
+            position: relative;
+
+            &:not(:first-child){
+                margin-left: 3%;
+            }
+            &__img{
+                width: 100%;
+                height: auto;
+                border-radius: 15px;
+            }
+
+            &__name{
+                margin-top: 35px;
+                text-align: center;
+                font-size: $fontSize-team-member-name;
+                @include fontOpenSansSemiBold;
+            }
+
+            &__occupation{
+                margin-top: 15px;
+                text-align: center;
+                font-size: $fontSize-team-member-occupation;
+                @include fontOpenSans;
+            }
+
+            &__social_networks{
+                margin-top: 30px;
+                display: flex;
+                position: relative;
+                justify-content: center;
+                align-items: center;
+
+                .social_network{
+                    position: relative;
+                    min-width: 50px; min-height: 50px;
+                    border-radius: 15px;
+                    background: $color-team-soc_net-bg;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: .2s;
+
+                    &:not(:first-child){
+                        margin: {
+                            left: 25px;
+                        }
+                    }
+                }
+                &__facebook{
+                    &:hover{
+                        background: #3949ab;
+                    }
+
+                    &:hover i{
+                        color: white;
+                    }
+                    i {
+                        transition: .2s;
+                        color: $color-button;
+                        font-size: 30px;
+                    }
+                }
+                &__twitter{
+                    &:hover{
+                        background: rgb(26, 145, 218);
+                    }
+                    &:hover i{
+                        color: white;
+                    }
+                    i {
+                        transition: .2s;
+                        color: $color-button;
+                        font-size: 30px;
+                    }
+                }
+                &__chat{
+                    &:hover{
+                        background: rgb(39, 135, 245);
+                    }
+                    &:hover i{
+                        color: white;
+                    }
+                    i {
+                        transition: .2s;
+                        color: $color-button;
+                        font-size: 30px;
+                    }
+                }
+                &__dribble{
+                    &:hover{
+                        background: #e84c88;
+                    }
+                    &:hover i{
+                        color: white;
+                    }
+                    i {
+                        transition: .2s;
+                        color: $color-button;
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+// ===/Team===
