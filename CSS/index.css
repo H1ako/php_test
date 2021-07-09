@@ -766,13 +766,13 @@ body {
   height: 18px;
   text-overflow: ellipsis;
 }
-.section-works-form {
+.section-works-view_more {
   margin-top: 130px;
   display: flex;
   width: 100%;
   justify-content: center;
 }
-.section-works-form-btn {
+.section-works-view_more-btn {
   font-family: "Roboto", sans-serif;
   font-size: 20px;
   min-width: 210px;
