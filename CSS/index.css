@@ -1261,16 +1261,10 @@ body {
 .section-contact-location-and-phone_number-and-email .section-contact-info-part {
   position: relative;
   width: 270px;
-  word-wrap: break-word;
-  font-size: 20px;
-  font-family: "Open Sans", sans-serif;
-  font-weight: bold;
-  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
 }
 .section-contact-location-and-phone_number-and-email .section-contact-info-part__image {
   position: relative;
@@ -1286,6 +1280,15 @@ body {
   width: 60%;
   height: 60%;
   filter: invert(1);
+}
+.section-contact-location-and-phone_number-and-email .section-contact-info-part__text {
+  margin-top: 35px;
+  word-wrap: break-word;
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: white;
 }
 .section-contact-content {
   position: relative;

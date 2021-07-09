@@ -967,15 +967,10 @@ body{
         .section-contact-info-part {
             position: relative;
             width: 270px;
-            word-wrap: break-word;
-            font-size: $fontSize-contact-info_part;
-            @include fontOpenSansSemiBold;
-            text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: white;
             &__image{
                 position: relative;
                 width: 110px;
@@ -990,6 +985,14 @@ body{
                     height: 60%;
                     filter: invert(1);
                 }
+            }
+            &__text{
+                margin-top: 35px;
+                word-wrap: break-word;
+                font-size: $fontSize-contact-info_part;
+                @include fontOpenSansSemiBold;
+                text-align: center;
+                color: white;
             }
         }
     }
