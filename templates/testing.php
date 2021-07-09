@@ -18,6 +18,7 @@
     echo floatval($gg) + 12;
     echo "<br>{$rooter} . {$num}<br>";
     echo $gg + $rooter;
+    echo mt_rand(123, 12312);
 ?>
 </body>
 </html>

@@ -973,6 +973,7 @@ body {
 
 .section-team {
   position: relative;
+  background: white;
 }
 .section-team .section-inner {
   position: relative;
@@ -1047,6 +1048,7 @@ body {
   justify-content: center;
   align-items: center;
   transition: 0.2s;
+  cursor: pointer;
 }
 .section-team-content-member__social_networks .social_network:not(:first-child) {
   margin-left: 25px;
@@ -1094,4 +1096,261 @@ body {
   transition: 0.2s;
   color: #00897b;
   font-size: 30px;
+}
+
+.section-blog {
+  position: relative;
+  background: #e4fdf9;
+  color: black;
+}
+.section-blog .section-inner {
+  position: relative;
+  padding-top: 125px;
+  padding-bottom: 125px;
+}
+.section-blog-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section-blog-wrapper__title {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+}
+.section-blog-wrapper__subtitle {
+  margin-top: 40px;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  width: 630px;
+}
+.section-blog-content {
+  margin-top: 125px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.section-blog-content-article {
+  position: relative;
+  display: flex;
+}
+.section-blog-content-article:nth-child(2n) .section-blog-content-article__description {
+  order: -1;
+  margin: 0 30px 0 0;
+}
+.section-blog-content-article__img {
+  flex-grow: 1;
+  flex-basis: 50%;
+}
+.section-blog-content-article__description {
+  position: relative;
+  padding-top: 60px;
+  min-width: 50%;
+  flex-grow: 1;
+  margin: 0 0 0 30px;
+}
+.section-blog-content-article__description__title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+}
+.section-blog-content-article__description__title:hover {
+  color: #00897b;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.section-blog-content-article__description-date-and-dir {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  margin-top: 25px;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.section-blog-content-article__description-date-and-dir__date {
+  display: flex;
+  align-items: baseline;
+}
+.section-blog-content-article__description-date-and-dir__date .date {
+  margin-left: 15px;
+  font-size: 17px;
+}
+.section-blog-content-article__description-date-and-dir__direction {
+  display: flex;
+  align-items: baseline;
+}
+.section-blog-content-article__description-date-and-dir__direction .direction {
+  margin-left: 15px;
+  font-size: 17px;
+}
+.section-blog-content-article__description__subtitle {
+  font-family: "Open Sans", sans-serif;
+  width: 80%;
+  margin-top: 25px;
+  font-size: 15px;
+}
+.section-blog-view-more {
+  margin-top: 125px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-blog-view-more__btn {
+  min-width: 220px;
+  height: 70px;
+  background: #00897b;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  outline: none;
+  color: white;
+  border: none;
+}
+
+.section-contact {
+  position: relative;
+  background: url("../Images/contact-pic.png") no-repeat 50% 50%;
+  background-size: cover;
+}
+.section-contact::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: black;
+  opacity: 0.85;
+  z-index: 5;
+}
+.section-contact .section-inner {
+  position: relative;
+  z-index: 10;
+  padding-top: 125px;
+  padding-bottom: 125px;
+}
+.section-contact-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section-contact-wrapper__title {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+}
+.section-contact-wrapper__subtitle {
+  margin-top: 40px;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  width: 630px;
+  color: white;
+}
+.section-contact-location-and-phone_number-and-email {
+  margin-top: 100px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.section-contact-location-and-phone_number-and-email .section-contact-info-part {
+  position: relative;
+  width: 270px;
+  word-wrap: break-word;
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.section-contact-location-and-phone_number-and-email .section-contact-info-part__image {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: #3949ab;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-contact-location-and-phone_number-and-email .section-contact-info-part__image img {
+  width: 60%;
+  height: 60%;
+  filter: invert(1);
+}
+.section-contact-content {
+  position: relative;
+  margin-top: 85px;
+  position: relative;
+}
+.section-contact-content-name-and-email {
+  position: relative;
+  display: flex;
+}
+.section-contact-content-name-and-email__name {
+  padding: 0 25px;
+  flex-basis: 50%;
+  height: 85px;
+  border-radius: 10px;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}
+.section-contact-content-name-and-email__email {
+  padding: 0 25px;
+  margin-left: 30px;
+  flex-basis: 50%;
+  height: 85px;
+  border-radius: 10px;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}
+.section-contact-content__message {
+  padding: 25px 25px;
+  margin-top: 35px;
+  width: 100%;
+  height: 325px;
+  resize: none;
+  border: none;
+  border-radius: 10px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}
+.section-contact-content__send {
+  margin-top: 40px;
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+}
+.section-contact-content__send-btn {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  min-width: 220px;
+  height: 70px;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  color: black;
+  background: white;
+}
+.section-contact-content input::placeholder, .section-contact-content textarea::placeholder {
+  color: black;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}
+.section-contact-content input:focus, .section-contact-content textarea:focus {
+  outline: none;
+  border: 5px solid #3949ab;
 }
