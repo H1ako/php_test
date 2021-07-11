@@ -29,12 +29,40 @@ body{
         width: 80%;
     }
 }
+.hidden{
+    display: none;
+}
+.flex{
+    display: flex !important;
+}
 // ===/Common===
 
 // ===Header===
 .section-header{
     position: relative;
-    height: 100vh;
+
+
+    &-menu{
+        display: none;
+        @media (max-width: $screen-sm-max){
+            display: flex;
+            justify-content: center;
+        }
+
+        &__btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            font-size: 40px;
+            outline: none;
+            border: none;
+            background: none;
+            cursor: pointer;
+
+        }
+    }
 
     // ==Navigation Logo Search==
     &-top-bar{
@@ -42,7 +70,12 @@ body{
         position: relative;
         justify-content: space-between;
         align-items: center;
-        min-height: 12%;
+        min-height: 12vh;
+
+        @media (max-width: $screen-sm-max){
+            flex-direction: column;
+            justify-content: center;
+        }
     }
 
     &-logo{
@@ -62,6 +95,12 @@ body{
         @media (max-width: $screen-md-max){
             width: 100%;
         }
+        @media (max-width: $screen-sm-max){
+            display: none;
+            flex-direction: column;
+            align-items: center;
+        }
+
 
         &__nav{
             width: 100%;
@@ -73,6 +112,9 @@ body{
             margin: 0;
             padding: 0;
             text-align: center;
+            @media (max-width: $screen-sm-max){
+                flex-direction: column;
+            }
             &--li{
                 position: relative;
                 font-size: $fontSize-header-nav;
@@ -90,6 +132,14 @@ body{
                         left: 20px;
                     }
                 }
+
+                @media (max-width: $screen-sm-max){
+                    margin: {
+                        top: 20px;
+                        bottom: 20px;
+                    }
+                }
+
             }
         }
 
@@ -99,20 +149,24 @@ body{
                 left: 10px;
             }
             width: 22px; height: 22px;
+            @media (max-width: $screen-sm-max){
+                order: -1;
+            }
         }
     }
     // ==/Navigation Logo Search==
 
     // ==Slogan Buttons==
     &-content{
+        position: relative;
         flex-grow: 1;
         position: relative;
         background: url('../Images/header-pic.png') no-repeat 66% 36%;
-        background-size: 119%;
+        background-size: cover;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%; min-height: 88%;
+        width: 100%; min-height: 88vh;
 
         &::after{
             content: '';
@@ -125,6 +179,8 @@ body{
     }
 
     &-wrapper{
+        width: 100%;
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -148,7 +204,10 @@ body{
         }
 
         &-form{
+            position: relative;
+            width: 100%;
             display: flex;
+            justify-content: center;
             margin-top: 80px;
             &__btn-services{
                 background: none;
@@ -181,6 +240,7 @@ body{
 
 // ===About===
 .section-about{
+    position: relative;
     color: $color-text;
     background: $color-bg;
     .section-inner{
@@ -208,20 +268,17 @@ body{
 
     &-content{
         display: flex;
-        justify-content: center;
-        flex-grow: 1;
+        justify-content: space-around;
         margin-top: 125px;
+        align-items: baseline;
 
         &-feature{
+            position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 260px;
             min-height: 200px;
-
-            &:not(:first-child){
-                margin-left: 145px;
-            }
 
             &__img{
                 width: 65px;
@@ -235,6 +292,7 @@ body{
                 font-size: $fontSize-about-feature-title;
             }
             &__subtitle{
+                width: 95%;
                 margin-top: 30px;
                 text-align: center;
                 @include fontOpenSans;
@@ -278,6 +336,15 @@ body{
         grid-gap: 30px;
         grid-template-columns: 1fr 1fr 1fr;
         grid-auto-rows: minmax(440px, auto);
+        @media (max-width: $screen-md-max){
+            grid-template-columns: 1fr 1fr;
+        }
+        @media (max-width: $screen-sm-max){
+            grid-template-columns: 1fr;
+        }
+        @media (min-width: $screen-lg-min){
+            grid-template-columns: 1fr 1fr 1fr;
+        }
 
         &-service{
             padding: 50px;
@@ -376,22 +443,39 @@ body{
         position: relative;
         display: flex;
         justify-content: center;
+        // @media (max-width: $screen-sm-max){
+        //     flex-direction: column;
+        //     align-items: center;
+        // }
 
         &__btn{
-            margin: {
-                left: 10px;
-                right: 10px;
-            };
             @include fontOpenSansSemiBold;
             font-size: $fontSize-button;
             background: none;
             outline: none;
             border: 3px solid $color-button;
-            min-width: 180px;
+            flex-basis: 180px;
             height: 55px;
             transition: .2s;
+            flex-shrink: 1;
+
+            @media (max-width: $screen-sx-max){
+                margin: {
+                    left: 5px;
+                    right: 5px;
+                };
+            }
+
+            @media (min-width: $screen-sm-min){
+                margin: {
+                     left: 10px;
+                     right: 10px;
+                };
+            }
+
             &:first-child{
-                min-width: 100px;
+                flex-basis: 100px;
+                flex-shrink: 0;
             }
 
             &:hover{
@@ -406,6 +490,14 @@ body{
         grid-template-columns: 1fr 1fr 1fr;
         grid-auto-rows: minmax(370px, auto);
         grid-gap: 30px;
+
+        @media (max-width: $screen-sm-max){
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media (max-width: $screen-sx-max){
+            grid-template-columns: 1fr;
+        }
         &-work{
             position: relative;
             overflow: hidden;
@@ -556,7 +648,18 @@ body{
             position: relative;
             grid-gap: 30px;
             grid-auto-rows: minmax(670px, auto);
-            grid-template-columns: 1fr 1fr 1fr;
+
+            @media (min-width: $screen-md-min){
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            @media (max-width: $screen-sm-max){
+                grid-template-columns: 1fr 1fr;
+            }
+
+            @media (max-width: $screen-sx-max){
+                grid-template-columns: 1fr;
+            }
 
             &-plan{
                 display: flex;
@@ -578,8 +681,8 @@ body{
                     justify-content: center;
                     background: $color-pricePlan-plan-header;
                     width: 100%;
-                    margin-top: -20px;
-                    min-height: 230px;
+                    margin-top: -30px;
+                    min-height: 240px;
                     transform: skewy(-5deg);
                     @include fontOpenSans;
                     &__title{
@@ -719,15 +822,17 @@ body{
             }
 
             &__social_networks{
-                margin-top: 30px;
+                margin-top: 15px;
+                flex-wrap: wrap;
                 display: flex;
                 position: relative;
-                justify-content: center;
+                justify-content: space-around;
                 align-items: center;
 
                 .social_network{
                     position: relative;
                     min-width: 50px; min-height: 50px;
+                    margin-top: 15px;
                     border-radius: 15px;
                     background: $color-team-soc_net-bg;
                     display: flex;
@@ -736,11 +841,6 @@ body{
                     transition: .2s;
                     cursor: pointer;
 
-                    &:not(:first-child){
-                        margin: {
-                            left: 25px;
-                        }
-                    }
                 }
                 &__facebook{
                     &:hover{
@@ -831,27 +931,56 @@ body{
     &-content{
         margin-top: 125px;
         position: relative;
+        width: 100%;
         display: flex;
         flex-direction: column;
         &-article{
             position: relative;
+            width: 100%;
             display: flex;
+            @media (max-width: $screen-sm-max){
+                flex-direction: column;
+                align-items: center;
+                border: 3px solid darken($color-blog-bg, 20%);
+                border-radius: 15px;
+                &:not(:first-child){
+                    margin-top: 30px;
+                }
+            }
 
             &:nth-child(2n) &__description{
                 order: -1;
-                margin: 0 30px 0 0;
+                margin: 0 3vw 0 0;
             }
 
             &__img{
-                flex-grow: 1;
-                flex-basis: 50%;
+                border-radius: 15px;
+                flex-shrink: 1;
+                width: 50%;
+
+                @media (max-width: $screen-sm-max){
+                    margin-top: 15px;
+                    width: 100%;
+                    order: 1;
+                }
             }
             &__description{
+                display: flex;
+                flex-direction: column;
                 position: relative;
-                padding-top: 60px;
-                min-width: 50%;
                 flex-grow: 1;
-                margin: 0 0 0 30px;
+
+                @media (max-width: $screen-sm-max){
+                    width: 100%;
+                    text-align: center;
+                    align-items: center;
+                    padding-top: 30px;
+                }
+                @media (min-width: $screen-md-min){
+                    padding-top: 60px;
+                    margin: 0 0 0 3vw;
+                    width: 50%;
+                }
                 &__title{
                     @include fontOpenSansSemiBold;
                     font-size: $fontSize-blog-article-title;
@@ -880,6 +1009,7 @@ body{
 
                     }
                     &__direction{
+                        margin-left: 10px;
                         display: flex;
                         align-items: baseline;
                         .direction{
@@ -945,9 +1075,11 @@ body{
     }
 
     &-wrapper{
+        position: relative;
+        width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: space-between;
 
         &__title{
             @include blockTitle;
@@ -962,8 +1094,37 @@ body{
     &-location-and-phone_number-and-email{
         margin-top: 100px;
         position: relative;
-        display: flex;
-        justify-content: center;
+
+
+        @media (max-width: $screen-sm-max){
+            position: relative;
+            display: grid;
+            margin: 0 auto;
+            margin-top: 100px;
+            grid-template-columns: 1fr 0 1fr;
+            grid-row-gap: 30px;
+            justify-items: center;
+            // align-items: start;
+            grid-template-areas:
+                "a . p"
+                ". e .";
+        }
+
+        @media (max-width: $screen-sx-max){
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (min-width: $screen-md-min){
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .section-contact__location{grid-area: a;justify-self: start;}
+        .section-contact__phone_number{grid-area: p; justify-self: center;}
+        .section-contact__email{grid-area: e; justify-self: center;}
         .section-contact-info-part {
             position: relative;
             width: 270px;
@@ -971,6 +1132,7 @@ body{
             flex-direction: column;
             justify-content: center;
             align-items: center;
+
             &__image{
                 position: relative;
                 width: 110px;
@@ -999,28 +1161,47 @@ body{
 
     &-content{
         position: relative;
+        width: 100%;
         margin-top: 85px;
         position: relative;
 
         &-name-and-email{
             position: relative;
             display: flex;
+
+            @media (max-width: $screen-sx-max){
+                flex-direction: column;
+            }
+
             &__name{
                 padding: 0 25px;
-                flex-basis: 50%;
                 height: 85px;
                 border-radius: 10px;
                 border: none;
                 @include fontOpenSansSemiBold;
+
+                @media (min-width: $screen-sm-min){
+                    flex-basis: 50%;
+                }
             }
+
+
+
             &__email{
                 padding: 0 25px;
-                margin-left: 30px;
-                flex-basis: 50%;
                 height: 85px;
                 border-radius: 10px;
                 border: none;
                 @include fontOpenSansSemiBold;
+
+                @media (max-width: $screen-sx-max){
+                    margin-top: 30px;
+                }
+
+                @media (min-width: $screen-sm-min){
+                    margin-left: 30px;
+                    flex-basis: 50%;
+                }
             }
         }
 

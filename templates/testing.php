@@ -19,6 +19,14 @@
     echo "<br>{$rooter} . {$num}<br>";
     echo $gg + $rooter;
     echo mt_rand(123, 12312);
+    if ($num == 5) {
+        strlen('sf');
+        strtolower('FSF');
+
+    }
+    $list = ['age' => 18];
+    // for import other php file:  require(will throw an error if dont find file) | include(will work if file get error)
+    // include_once | require_once
 ?>
 </body>
 </html>

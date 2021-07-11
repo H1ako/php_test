@@ -30,6 +30,7 @@ $fontSize-block-subtitle: 15px;  //Open Sans
     @include fontOpenSans;
     font-size: $fontSize-block-subtitle;
     width: 630px;
+    max-width: 80%;
 }
 
 @mixin filledButtonEffect($color){
@@ -68,13 +69,16 @@ $fontSize-header-logo: 25px;
 
 // ==Button==
 @mixin buttonHeader{
-    min-width: 220px;
+    flex-basis: 220px;
     height: 70px;
     outline: none;
     text-decoration: none;
     font-size: 20px;
     color: $color-header-text;
     @include fontRobotoBold;
+    @media (max-width: $screen-sx-max){
+
+    }
 }
 // ==/Button==
 // ===/Header===
