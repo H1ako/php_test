@@ -236,7 +236,7 @@ body{
     }
     // ==/Slogan Buttons==
 }
-// ===Header===
+// ===/Header===
 
 // ===About===
 .section-about{
@@ -1079,7 +1079,7 @@ body{
         width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: space-between;
+        align-items: center;
 
         &__title{
             @include blockTitle;

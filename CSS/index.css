@@ -1392,7 +1392,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: space-between;
+  align-items: center;
 }
 .section-contact-wrapper__title {
   text-align: center;
