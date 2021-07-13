@@ -1,21 +1,23 @@
 <header class="section-header">
-    <div class="section-header-top-bar section-inner section-outer">
+    <div class="section-header-top-bar section-inner section-outer " id="section-header-top-bar">
         <div class="section-header-menu">
             <button class="section-header-menu__btn" id='btn-menu'>
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </button>
         </div>
         <div class="section-header-logo">LOGO</div>
-        <div class="section-header-nav-and-search" id='header-nav'>
-            <nav class="section-header-nav-and-search__nav">
-                <li class="section-header-nav-and-search__nav--li">Home</li>
-                <li class="section-header-nav-and-search__nav--li">About</li>
-                <li class="section-header-nav-and-search__nav--li">Servicing</li>
-                <li class="section-header-nav-and-search__nav--li">Portfolio</li>
-                <li class="section-header-nav-and-search__nav--li">Blog</li>
-                <li class="section-header-nav-and-search__nav--li">Contact us</li>
-            </nav>
-            <img src='../SVG/loupe.svg' class="section-header-nav-and-search__search">
+        <div class="section-header-nav-and-search collapsed" id='header-nav'>
+            <div class="section-header-nav-and-search-wrapper">
+                <nav class="section-header-nav-and-search__nav">
+                    <li class="section-header-nav-and-search__nav--li">Home</li>
+                    <li class="section-header-nav-and-search__nav--li">About</li>
+                    <li class="section-header-nav-and-search__nav--li">Servicing</li>
+                    <li class="section-header-nav-and-search__nav--li">Portfolio</li>
+                    <li class="section-header-nav-and-search__nav--li">Blog</li>
+                    <li class="section-header-nav-and-search__nav--li">Contact us</li>
+                </nav>
+                <img src='../SVG/loupe.svg' class="section-header-nav-and-search__search">
+            </div>
         </div>
     </div>
 
