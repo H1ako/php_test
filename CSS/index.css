@@ -1439,25 +1439,22 @@ body {
 .section-contact-location-and-phone_number-and-email {
   margin-top: 100px;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 @media (max-width: 767px) {
   .section-contact-location-and-phone_number-and-email {
     position: relative;
-    display: grid;
     margin: 0 auto;
     margin-top: 100px;
-    grid-template-columns: 1fr 0 1fr;
-    grid-row-gap: 30px;
-    justify-items: center;
-    grid-template-areas: "a . p" ". e .";
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 }
 @media (max-width: 575px) {
   .section-contact-location-and-phone_number-and-email {
-    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
   }
 }
 @media (min-width: 768px) {
@@ -1467,17 +1464,10 @@ body {
     align-items: flex-start;
   }
 }
-.section-contact-location-and-phone_number-and-email .section-contact__location {
-  grid-area: a;
-  justify-self: start;
-}
-.section-contact-location-and-phone_number-and-email .section-contact__phone_number {
-  grid-area: p;
-  justify-self: center;
-}
-.section-contact-location-and-phone_number-and-email .section-contact__email {
-  grid-area: e;
-  justify-self: center;
+@media (max-width: 767px) {
+  .section-contact-location-and-phone_number-and-email .section-contact__email {
+    margin: 0 auto;
+  }
 }
 .section-contact-location-and-phone_number-and-email .section-contact-info-part {
   position: relative;
@@ -1486,6 +1476,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 767px) {
+  .section-contact-location-and-phone_number-and-email .section-contact-info-part {
+    margin-top: 20px;
+  }
 }
 .section-contact-location-and-phone_number-and-email .section-contact-info-part__image {
   position: relative;

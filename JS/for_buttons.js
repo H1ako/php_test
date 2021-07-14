@@ -9,5 +9,5 @@ btn_menu.on('click', function () {
     var navigate = $('#header-nav');
     var topBar = $('#section-header-top-bar');
     navigate.toggleClass('collapsed');
-    // topBar.toggleClass('section-header-nav-clicked');
 })
+var a = '';

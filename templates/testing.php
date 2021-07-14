@@ -50,7 +50,22 @@
     echo '<br>';
     $arr_words = explode(",", $gg);
     print_r($arr_words);
-    echo '<br>'.implode(' | ', $arr_words);
+    echo '<br>'.implode(' | ', $arr_words).'<br>';
+    //$fileTxt = file('text.txt');
+    //print_r($fileTxt);
+    echo '<br>';
+    //$file = fopen('text.txt', 'r+'); // open file
+    //fwrite($file, "\nhalloo world\navocado halo");  //add text to file
+    //$fText = fread($file, filesize('text.txt')); // read file
+    //fclose($file); //close file
+    //chmod($file);  //set access perms
+    //file_put_contents('text.txt', 'string'); //write in file
+    //file_get_contents('text.txt');  //read file
+    //__FILE__ //full path to file
+    //fileperms($file);  //file access perms
+    //file_exists('text.txt');  // if file in directory
+    //rename($file, "string");  //rename file
+    //unlink($file);  //delete
 ?>
 </body>
 </html>
