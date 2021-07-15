@@ -340,6 +340,12 @@ template {
   display: none;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 50%;
+  scroll-padding-bottom: 50%;
+}
+
 body {
   background: white;
 }

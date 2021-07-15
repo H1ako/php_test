@@ -14,6 +14,14 @@
     <script src="https://kit.fontawesome.com/014012602d.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <?php
+    if ($_POST){
+        echo 'POST IS HERE';
+    }
+    else{
+        echo 'POST IS NOT HERE';
+    }
+    ?>
     <!-- ===SECTION HEADER=== -->
     <?php include "Index_imports/Header.php"; ?>
     <!-- ===/SECTION HEADER=== -->
@@ -52,6 +60,7 @@
     <?php
     echo "<script src='../JS/jquery.min.js?$dateTime'></script>";
     echo "<script src='../JS/for_buttons.js?$dateTime'></script>";
+    echo "<script src='../JS/for_ajax.js?$dateTime'></script>";
     ?>
 
 

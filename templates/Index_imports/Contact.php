@@ -36,14 +36,15 @@
             </div>
         </div>
         <div class="section-contact-content">
-            <form method="post" action="" class="section-contact-content-form">
+            <form method="post" action="views.php" class="section-contact-content-form" id="form-contact">
+                <input type="hidden" name="mail"> 
                 <div class="section-contact-content-name-and-email">
                     <input type="text" name='contact__name' placeholder="Your Name" class="section-contact-content-name-and-email__name">
                     <input type="email" name='contact__email' placeholder="Your Email" class="section-contact-content-name-and-email__email">
                 </div>
                 <textarea placeholder="Your Message" class="section-contact-content__message" name='contact__message'></textarea>
                 <div class="section-contact-content__send">
-                    <input type='submit' class="section-contact-content__send-btn" value="SEND"></input>
+                    <input type='submit' class="section-contact-content__send-btn" value="SEND" id='form-btn-contact'></input>
                 </div>
             </form>
         </div>
