@@ -37,7 +37,7 @@
         </div>
         <div class="section-contact-content">
             <form method="post" action="views.php" class="section-contact-content-form" id="form-contact">
-                <input type="hidden" name="mail"> 
+                <input type="hidden" name="mail">
                 <div class="section-contact-content-name-and-email">
                     <input type="text" name='contact__name' placeholder="Your Name" class="section-contact-content-name-and-email__name">
                     <input type="email" name='contact__email' placeholder="Your Email" class="section-contact-content-name-and-email__email">

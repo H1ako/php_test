@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,6 +7,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
 <?php
@@ -70,6 +72,41 @@
 //    foreach($_SERVER as $key=>$value){
 //        echo '<br>'.$key.' : '.$value;
 //    }
+//    $username = 'Alex';
+//    //setcookie("username", $username, time() + 60);
+////    print_r($_COOKIE);
+//    if (in_array($_SESSION, $_COOKIE)) {
+//        echo "<br>" . $_COOKIE["username"];
+//    }
+//    $_SESSION['username'] = $username;
+    print_r($_SESSION);
+    echo '<br>'.' :: '.!isset($_GET['id']);
+
+    $articles = [
+        [
+            'title' => 'Title number 1',
+            'subtitle' => 'Subtitle number 1'
+        ],
+
+        [
+            'title' => 'Title number 2',
+            'subtitle' => 'Subtitle number 2'
+        ]
+    ];
 ?>
+    <?php foreach ($articles as $id => $article): ?>
+        <a href="testing.php?id=<?= $id ?>"><?= $article['title'] ?></a>
+        <br>
+    <?php endforeach; ?>
+<?php
+
+?>
+<form action="testing_form.php" method="post" class="container">
+    <input value="<?=$_SESSION['username']?>" type="text" name="username" class="form-control">
+    <p><?=$_SESSION['error_username']?></p>
+    <input value="<?=$_SESSION['email']?>" type="email" name="email" class="form-control mt-1">
+    <textarea name="message" name="message" class="form-control mt-1"><?=$_SESSION['message']?></textarea>
+    <input type="submit" id="btn" class="btn btn-warning mt-1">
+</form>
 </body>
 </html>

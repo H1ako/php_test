@@ -10,4 +10,3 @@ btn_menu.on('click', function () {
     var topBar = $('#section-header-top-bar');
     navigate.toggleClass('collapsed');
 })
-var a = '';
