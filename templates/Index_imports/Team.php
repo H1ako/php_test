@@ -7,65 +7,36 @@
             </div>
         </div>
         <div class="section-team-content">
-            <div class="section-team-content-member">
-                <img src="../Images/member.png" alt="" class="section-team-content-member__img">
-                <div class="section-team-content-member__name">John Doe</div>
-                <div class="section-team-content-member__occupation">General Manager</div>
-                <div class="section-team-content-member__social_networks">
-                    <div class="section-team-content-member__social_networks__facebook social_network">
-                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                    </div>
-                    <div class="section-team-content-member__social_networks__twitter social_network">
-                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                    </div>
-                    <div class="section-team-content-member__social_networks__chat social_network">
-                        <i class="fa fa-comments" aria-hidden="true"></i>
-                    </div>
-                    <div class="section-team-content-member__social_networks__dribble social_network">
-                        <i class="fa fa-dribbble" aria-hidden="true"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section-team-content-member">
-                <img src="../Images/member.png" alt="" class="section-team-content-member__img">
-                <div class="section-team-content-member__name">John Doe</div>
-                <div class="section-team-content-member__occupation">General Manager</div>
-                <div class="section-team-content-member__social_networks">
-                    <div class="section-team-content-member__social_networks__facebook social_network">
-                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                    </div>
-                    <div class="section-team-content-member__social_networks__twitter social_network">
-                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                    </div>
-                    <div class="section-team-content-member__social_networks__chat social_network">
-                        <i class="fa fa-comments" aria-hidden="true"></i>
-                    </div>
-                    <div class="section-team-content-member__social_networks__dribble social_network">
-                        <i class="fa fa-dribbble" aria-hidden="true"></i>
+            <?php $team = $mysql->query("SELECT * FROM `team`")->fetch_all(); ?>
+            <?php foreach($team as $id => $team_member): ?>
+                <div class="section-team-content-member">
+                    <img src="../Images/member.png" alt="" class="section-team-content-member__img">
+                    <div class="section-team-content-member__name"><?=$team_member[1]?></div>
+                    <div class="section-team-content-member__occupation"><?=$team_member[2]?></div>
+                    <div class="section-team-content-member__social_networks">
+                        <a href="<?=$team_member[3]?>">
+                            <div class="section-team-content-member__social_networks__facebook social_network">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                        <a href="<?=$team_member[4]?>">
+                            <div class="section-team-content-member__social_networks__twitter social_network">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                        <a href="<?=$team_member[5]?>">
+                            <div class="section-team-content-member__social_networks__chat social_network">
+                                <i class="fa fa-comments" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                        <a href="<?=$team_member[6]?>">
+                            <div class="section-team-content-member__social_networks__dribble social_network">
+                                <i class="fa fa-dribbble" aria-hidden="true"></i>
+                            </div>
+                        </a>
                     </div>
                 </div>
-            </div>
-
-            <div class="section-team-content-member">
-                <img src="../Images/member.png" alt="" class="section-team-content-member__img">
-                <div class="section-team-content-member__name">John Doe</div>
-                <div class="section-team-content-member__occupation">General Manager</div>
-                <div class="section-team-content-member__social_networks">
-                    <div class="section-team-content-member__social_networks__facebook social_network">
-                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                    </div>
-                    <div class="section-team-content-member__social_networks__twitter social_network">
-                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                    </div>
-                    <div class="section-team-content-member__social_networks__chat social_network">
-                        <i class="fa fa-comments" aria-hidden="true"></i>
-                    </div>
-                    <div class="section-team-content-member__social_networks__dribble social_network">
-                        <i class="fa fa-dribbble" aria-hidden="true"></i>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>

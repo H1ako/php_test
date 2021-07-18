@@ -14,6 +14,10 @@
     <script src="https://kit.fontawesome.com/014012602d.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <?php
+        $mysql = new mysqli("localhost", "root", "", "site_webdev_landing_page");
+        $mysql->query("SET NAMES 'utf8'");
+    ?>
     <!-- ===SECTION HEADER=== -->
     <?php include "Index_imports/Header.php"; ?>
     <!-- ===/SECTION HEADER=== -->
@@ -58,3 +62,6 @@
 
 </body>
 </html>
+<?php
+    $mysql->close();
+?>

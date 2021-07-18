@@ -7,68 +7,29 @@
             </div>
         </div>
         <div class="section-blog-content">
-            <article class="section-blog-content-article">
-                <img src="../Images/blog-image.png" alt="" class="section-blog-content-article__img">
-                <div class="section-blog-content-article__description">
-                    <div class="section-blog-content-article__description__title">
-                        SEO Quis Vestibulum
-                    </div>
-                    <div class="section-blog-content-article__description-date-and-dir">
-                        <div class="section-blog-content-article__description-date-and-dir__date">
-                            <i class="fa fa-calendar" aria-hidden="true"></i><div class="date">14.0702017</div>
+            <?php $artices = $mysql->query("SELECT * FROM `blog`")->fetch_all(); ?>
+            <?php foreach($artices as $id => $article): ?>
+                <article class="section-blog-content-article">
+                    <img src="../Images/blog-image.png" alt="" class="section-blog-content-article__img">
+                    <div class="section-blog-content-article__description">
+                        <div class="section-blog-content-article__description__title">
+                            <?=$article[1]?>
                         </div>
-                        <div class="section-blog-content-article__description-date-and-dir__direction">
-                            <i class="fa fa-file-o" aria-hidden="true"></i><div class="direction">Development</div>
-                        </div>
+                        <div class="section-blog-content-article__description-date-and-dir">
+                            <div class="section-blog-content-article__description-date-and-dir__date">
+                                <i class="fa fa-calendar" aria-hidden="true"></i><div class="date"><?=$article[4]?></div>
+                            </div>
+                            <div class="section-blog-content-article__description-date-and-dir__direction">
+                                <i class="fa fa-file-o" aria-hidden="true"></i><div class="direction"><?=$article[2]?></div>
+                            </div>
 
-                    </div>
-                    <div class="section-blog-content-article__description__subtitle">
-                        Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...
-                    </div>
-                </div>
-            </article>
-
-            <article class="section-blog-content-article">
-                <img src="../Images/blog-image.png" alt="" class="section-blog-content-article__img">
-                <div class="section-blog-content-article__description">
-                    <div class="section-blog-content-article__description__title">
-                        SEO Quis Vestibulum
-                    </div>
-                    <div class="section-blog-content-article__description-date-and-dir">
-                        <div class="section-blog-content-article__description-date-and-dir__date">
-                            <i class="fa fa-calendar" aria-hidden="true"></i><div class="date">14.0702017</div>
                         </div>
-                        <div class="section-blog-content-article__description-date-and-dir__direction">
-                            <i class="fa fa-file-o" aria-hidden="true"></i><div class="direction">Development</div>
+                        <div class="section-blog-content-article__description__subtitle">
+                            <?=$article[3]?>
                         </div>
-
                     </div>
-                    <div class="section-blog-content-article__description__subtitle">
-                        Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...
-                    </div>
-                </div>
-            </article>
-
-            <article class="section-blog-content-article">
-                <img src="../Images/blog-image.png" alt="" class="section-blog-content-article__img">
-                <div class="section-blog-content-article__description">
-                    <div class="section-blog-content-article__description__title">
-                        SEO Quis Vestibulum
-                    </div>
-                    <div class="section-blog-content-article__description-date-and-dir">
-                        <div class="section-blog-content-article__description-date-and-dir__date">
-                            <i class="fa fa-calendar" aria-hidden="true"></i><div class="date">14.0702017</div>
-                        </div>
-                        <div class="section-blog-content-article__description-date-and-dir__direction">
-                            <i class="fa fa-file-o" aria-hidden="true"></i><div class="direction">Development</div>
-                        </div>
-
-                    </div>
-                    <div class="section-blog-content-article__description__subtitle">
-                        Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...
-                    </div>
-                </div>
-            </article>
+                </article>
+            <?php endforeach; ?>
             <div class="section-blog-view-more">
                 <button class="section-blog-view-more__btn">VIEW MORE</button>
             </div>

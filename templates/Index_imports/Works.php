@@ -15,29 +15,19 @@
         </div>
 
         <div class="section-works-content">
-            <div class="section-works-content-work">
-                <img src="../Images/work-img.png" alt="" class="section-works-content-work__img">
-                <div class="section-works-content-work-wrapper">
-                    <div class="section-works-content-work-wrapper__title">Hand Watch</div>
-                    <div class="section-works-content-work-wrapper__subtitle">ui/ux design</div>
+            <?php
+            $works = $mysql->query("SELECT * FROM `works`")->fetch_all();
+            ?>
+            <?php foreach ($works as $id => $work): ?>
+                <div class="section-works-content-work">
+                    <img src="../Images/work-img.png" alt="" class="section-works-content-work__img">
+                    <div class="section-works-content-work-wrapper">
+                        <div class="section-works-content-work-wrapper__title"><?=$work[1]?></div>
+                        <div class="section-works-content-work-wrapper__subtitle"><?=$work[2]?></div>
+                    </div>
                 </div>
-            </div>
+            <?php endforeach; ?>
 
-            <div class="section-works-content-work">
-                <img src="../Images/work-img.png" alt="" class="section-works-content-work__img">
-                <div class="section-works-content-work-wrapper">
-                    <div class="section-works-content-work-wrapper__title">Hand Watch</div>
-                    <div class="section-works-content-work-wrapper__subtitle">ui/ux design</div>
-                </div>
-            </div>
-
-            <div class="section-works-content-work">
-                <img src="../Images/work-img.png" alt="" class="section-works-content-work__img">
-                <div class="section-works-content-work-wrapper">
-                    <div class="section-works-content-work-wrapper__title">Hand Watch</div>
-                    <div class="section-works-content-work-wrapper__subtitle">ui/ux design</div>
-                </div>
-            </div>
 
         </div>
         <div class="section-works-view_more">

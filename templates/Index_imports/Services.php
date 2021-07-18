@@ -7,32 +7,21 @@
             </div>
         </div>
         <div class="section-services-content">
-            <div class="section-services-content-service">
-                <img src='../SVG/smartphone.svg' alt="" class="section-services-content-service__img">
-                <div class="section-services-content-service__title">Research</div>
-                <div class="section-services-content-service__subtitle">
-                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.
-                </div>
-                <button class="section-services-content-service__btn">READ MORE</button>
-            </div>
+            <?php
+            $services = $mysql->query("SELECT * FROM `services`")->fetch_all();
 
-            <div class="section-services-content-service">
-                <img src='../SVG/smartphone.svg' alt="" class="section-services-content-service__img">
-                <div class="section-services-content-service__title">Portfolio</div>
-                <div class="section-services-content-service__subtitle">
-                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.
+            ?>
+            <?php foreach($services as $id => $service): ?>
+                <div class="section-services-content-service">
+                    <img src='../SVG/smartphone.svg' alt="" class="section-services-content-service__img">
+                    <div class="section-services-content-service__title"><?=$service[1]?></div>
+                    <div class="section-services-content-service__subtitle">
+                        <?=$service[2]?>
+                    </div>
+                    <button class="section-services-content-service__btn">READ MORE</button>
                 </div>
-                <button class="section-services-content-service__btn">READ MORE</button>
-            </div>
+            <?php endforeach; ?>
 
-            <div class="section-services-content-service">
-                <img src='../SVG/smartphone.svg' alt="" class="section-services-content-service__img">
-                <div class="section-services-content-service__title">Support</div>
-                <div class="section-services-content-service__subtitle">
-                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.
-                </div>
-                <button class="section-services-content-service__btn">READ MORE</button>
-            </div>
         </div>
     </div>
 </section>

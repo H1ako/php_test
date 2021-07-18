@@ -1188,6 +1188,9 @@ body {
   justify-content: space-around;
   align-items: center;
 }
+.section-team-content-member__social_networks a {
+  text-decoration: none;
+}
 .section-team-content-member__social_networks .social_network {
   position: relative;
   min-width: 50px;

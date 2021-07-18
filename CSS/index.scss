@@ -857,6 +857,10 @@ body{
                 justify-content: space-around;
                 align-items: center;
 
+                & a{
+                    text-decoration: none;
+                }
+
                 .social_network{
                     position: relative;
                     min-width: 50px; min-height: 50px;
@@ -868,7 +872,6 @@ body{
                     align-items: center;
                     transition: .2s;
                     cursor: pointer;
-
                 }
                 &__facebook{
                     &:hover{
