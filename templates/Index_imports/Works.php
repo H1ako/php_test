@@ -16,7 +16,7 @@
 
         <div class="section-works-content">
             <?php
-            $works = $mysql->query("SELECT * FROM `works`")->fetch_all();
+            $works = $mysql->query("SELECT * FROM `works` ORDER BY `date` DESC")->fetch_all();
             ?>
             <?php foreach ($works as $id => $work): ?>
                 <div class="section-works-content-work">

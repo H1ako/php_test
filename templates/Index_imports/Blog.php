@@ -7,7 +7,7 @@
             </div>
         </div>
         <div class="section-blog-content">
-            <?php $articles = $mysql->query("SELECT * FROM `blog`"); ?>
+            <?php $articles = $mysql->query("SELECT * FROM `blog` ORDER BY `date` DESC"); ?>
             <?php while($article = $articles->fetch_assoc()): ?>
                 <article class="section-blog-content-article">
                     <img src="../Images/blog-image.png" alt="" class="section-blog-content-article__img">
