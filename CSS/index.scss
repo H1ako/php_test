@@ -77,6 +77,7 @@ body{
 
         @media (max-width: $screen-sm-max){
             flex-direction: column;
+            align-items: center;
             justify-content: center;
         }
     }
@@ -103,7 +104,6 @@ body{
         @media (max-width: $screen-sm-max){
             overflow: hidden;
             flex-direction: column;
-            align-items: center;
         }
 
         &-wrapper{
@@ -445,6 +445,7 @@ body{
 .section-works{
     position: relative;
     .section-inner{
+        width: 100%;
         position: relative;
 
         padding:{
@@ -515,20 +516,24 @@ body{
     &-content{
         margin-top: 120px;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-auto-rows: minmax(370px, auto);
         grid-gap: 30px;
 
-        @media (max-width: $screen-sm-max){
-            grid-template-columns: 1fr 1fr;
+        @media (min-width: 1442px){
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-auto-rows: minmax(300px, auto);
         }
-
-        @media (max-width: $screen-sx-max){
-            grid-template-columns: 1fr;
+        @media (max-width: 1441px){
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-auto-rows: minmax(280px, auto);
+        }
+        @media (max-width: 785px){
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-auto-rows: minmax(250px, auto);
         }
         &-work{
             position: relative;
             overflow: hidden;
+
 
             &:hover::after{
                 opacity: .6;
