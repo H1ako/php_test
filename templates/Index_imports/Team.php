@@ -7,36 +7,36 @@
             </div>
         </div>
         <div class="section-team-content">
-            <?php $team = $mysql->query("SELECT * FROM `team`")->fetch_all(); ?>
-            <?php foreach($team as $id => $team_member): ?>
+            <?php $team = $mysql->query("SELECT * FROM `team`"); ?>
+            <?php while($team_member = $team->fetch_assoc()): ?>
                 <div class="section-team-content-member">
                     <img src="../Images/member.png" alt="" class="section-team-content-member__img">
-                    <div class="section-team-content-member__name"><?=$team_member[1]?></div>
-                    <div class="section-team-content-member__occupation"><?=$team_member[2]?></div>
+                    <div class="section-team-content-member__name"><?=$team_member['name']?></div>
+                    <div class="section-team-content-member__occupation"><?=$team_member['industry']?></div>
                     <div class="section-team-content-member__social_networks">
-                        <a href="<?=$team_member[3]?>">
+                        <a href="<?=$team_member['facebook']?>">
                             <div class="section-team-content-member__social_networks__facebook social_network">
                                 <i class="fa fa-facebook" aria-hidden="true"></i>
                             </div>
                         </a>
-                        <a href="<?=$team_member[4]?>">
+                        <a href="<?=$team_member['twitter']?>">
                             <div class="section-team-content-member__social_networks__twitter social_network">
                                 <i class="fa fa-twitter" aria-hidden="true"></i>
                             </div>
                         </a>
-                        <a href="<?=$team_member[5]?>">
+                        <a href="<?=$team_member['chat']?>">
                             <div class="section-team-content-member__social_networks__chat social_network">
                                 <i class="fa fa-comments" aria-hidden="true"></i>
                             </div>
                         </a>
-                        <a href="<?=$team_member[6]?>">
+                        <a href="<?=$team_member['dribble']?>">
                             <div class="section-team-content-member__social_networks__dribble social_network">
                                 <i class="fa fa-dribbble" aria-hidden="true"></i>
                             </div>
                         </a>
                     </div>
                 </div>
-            <?php endforeach; ?>
+            <?php endwhile; ?>
         </div>
     </div>
 </section>

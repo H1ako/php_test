@@ -8,20 +8,19 @@
         </div>
         <div class="section-services-content">
             <?php
-            $services = $mysql->query("SELECT * FROM `services`")->fetch_all();
+            $services = $mysql->query("SELECT * FROM `services`");
 
             ?>
-            <?php foreach($services as $id => $service): ?>
+            <?php while($service = $services->fetch_assoc()): ?>
                 <div class="section-services-content-service">
                     <img src='../SVG/smartphone.svg' alt="" class="section-services-content-service__img">
-                    <div class="section-services-content-service__title"><?=$service[1]?></div>
+                    <div class="section-services-content-service__title"><?=$service['title']?></div>
                     <div class="section-services-content-service__subtitle">
-                        <?=$service[2]?>
+                        <?=$service['description']?>
                     </div>
                     <button class="section-services-content-service__btn">READ MORE</button>
                 </div>
-            <?php endforeach; ?>
-
+            <?php endwhile; ?>
         </div>
     </div>
 </section>

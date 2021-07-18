@@ -7,29 +7,29 @@
             </div>
         </div>
         <div class="section-blog-content">
-            <?php $artices = $mysql->query("SELECT * FROM `blog`")->fetch_all(); ?>
-            <?php foreach($artices as $id => $article): ?>
+            <?php $articles = $mysql->query("SELECT * FROM `blog`"); ?>
+            <?php while($article = $articles->fetch_assoc()): ?>
                 <article class="section-blog-content-article">
                     <img src="../Images/blog-image.png" alt="" class="section-blog-content-article__img">
                     <div class="section-blog-content-article__description">
                         <div class="section-blog-content-article__description__title">
-                            <?=$article[1]?>
+                            <?=$article['title']?>
                         </div>
                         <div class="section-blog-content-article__description-date-and-dir">
                             <div class="section-blog-content-article__description-date-and-dir__date">
-                                <i class="fa fa-calendar" aria-hidden="true"></i><div class="date"><?=$article[4]?></div>
+                                <i class="fa fa-calendar" aria-hidden="true"></i><div class="date"><?=$article['date']?></div>
                             </div>
                             <div class="section-blog-content-article__description-date-and-dir__direction">
-                                <i class="fa fa-file-o" aria-hidden="true"></i><div class="direction"><?=$article[2]?></div>
+                                <i class="fa fa-file-o" aria-hidden="true"></i><div class="direction"><?=$article['industry']?></div>
                             </div>
 
                         </div>
                         <div class="section-blog-content-article__description__subtitle">
-                            <?=$article[3]?>
+                            <?=$article['description']?>
                         </div>
                     </div>
                 </article>
-            <?php endforeach; ?>
+            <?php endwhile; ?>
             <div class="section-blog-view-more">
                 <button class="section-blog-view-more__btn">VIEW MORE</button>
             </div>
