@@ -1,4 +1,4 @@
-$('#form-btn-contact').on('click', function (event) {
+$('#form-contact').submit(function (event) {
     event.preventDefault();
     var form = $(this);
     var form_action = form.attr('action');
